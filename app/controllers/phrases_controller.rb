@@ -1,12 +1,7 @@
 class PhrasesController < ApplicationController
   def index
-  	# session[:phrases] = nil
-  	# session[:index] = nil
-  	unless session[:phrases] 
-  		session[:phrases] = []
-  	end
+  	session[:phrases] ||=[]
   	@phrases = session[:phrases]
-  	puts session[:phrases]
   end
 
   def get_new_phrase
@@ -23,7 +18,6 @@ class PhrasesController < ApplicationController
 	  	else
 	  		@phrase = nil
 	  	end
-
   	end
   	respond_to do |format|
   		format.js 
