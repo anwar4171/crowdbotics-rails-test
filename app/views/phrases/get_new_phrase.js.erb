@@ -1,0 +1,4 @@
+<% if @phrase %>
+	$('#phrases').append('<p><%= @phrase.name %></p>');
+	$('#phase_count').html('<%= "There are #{10 - session[:phrases].count } phases remains" %>');
+<% end %>

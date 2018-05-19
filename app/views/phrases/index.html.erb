@@ -1,0 +1,16 @@
+<h1>Phrases#index</h1>
+<p>Find me in app/views/phrases/index.html.erb</p>
+
+<%= link_to 'Get Phrase' , get_new_phrase_phrases_path, remote: true %>
+<%= link_to 'Clear Phrase' , clear_phrases_phrases_path, remote: true %>
+
+<div>
+	<h3 id="phase_count"><%= "There are #{10 - session[:phrases].count } phases remains" %></h3>
+</div>
+
+
+<div id="phrases">
+	<% @phrases.each do |i| %>
+		<p><%= i['name'] %></p>
+	<% end %>
+</div>
